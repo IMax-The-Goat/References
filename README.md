@@ -1,14 +1,31 @@
-# 2D arrays
+# Recursion
 
 #include <iostream>
 
 using namespace std;
 
+int allSums(unsigned int x) 
+{
+    // base case
+    if (x == 1) 
+    {
+        return x;
+    }
+    // recurse
+    else 
+    {
+        return x + allSums(x - 1);
+    }
+}
+
 int main()
 {
-    int x[2][6] = {{0, 1, 2, 3, 4, 5}, {6, 7, 8, 9, 10, 11}};
+    int num;
+    cout << "give me a number:  " << endl;
+    cin >> num;
     
-    cout << x[1][4];
+    unsigned int ans = allSums(num);
+    cout << ans << endl;
     
     return 0;
 }
